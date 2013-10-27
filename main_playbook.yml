@@ -1,0 +1,9 @@
+---
+- hosts: all
+
+  user: root
+
+  roles:
+    - common
+    - deploy-user
+    - ssh
