@@ -8,6 +8,4 @@
 - name: Set up authorized_keys for the deploy user
   authorized_key: user=deploy
                   state=present
-                  key="{{ item }}"
-  with_file:
-    - id_rsa.pub
+                  key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
