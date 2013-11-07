@@ -1,10 +1,17 @@
 ---
-- hosts: all
-
-  user: vagrant
-  sudo: yes
-
-  roles:
-    - common
-#    - deploy-user
+#- hosts: all
+#  user: vagrant
+#  sudo: yes
+#  roles:
+#    - common
 #    - ssh
+#
+#  tasks:
+#    - include: tasks/add_user.yml user=deploy
+#    - include: tasks/rbenv/setup_prerequisite.yml
+
+- hosts: all
+  user: deploy
+  tasks:
+    - include: tasks/rbenv/setup.yml
+    - include: tasks/rbenv/install_ruby.yml ruby=2.0.0-p195

@@ -1,0 +1,11 @@
+---
+- name: Add new user
+  user: name={{user}}
+        home=/home/{{user}}
+        shell=/bin/bash
+        comment="Add user"
+
+- name: Set up authorized_keys for the new user
+  authorized_key: user={{user}}
+                  state=present
+                  key="{{ lookup('file', '~/.ssh/id_rsa.pub') }}"
