@@ -10,27 +10,27 @@
 
   tasks:
     - name: install dependeces
-      sudo: true
+      sudo: yes
       apt: pkg={{ item }}
       with_items:
-        - libssl-dev
-#         - build-essential
-#         - bison
-#         - openssl
-#         - libreadline6
-#         - libreadline6-dev
-#         - curl
-#         - git-core
-#         - zlib1g
-#         - zlib1g-dev
-#         - libssl-dev
-#         - libyaml-dev
-#         - libxml2-dev
-#         - autoconf
-#         - libc6-dev
-#         - ncurses-dev
-#         - automake
-#         - libtool
+#        - libssl-dev
+#        - build-essential
+#        - bison
+#        - openssl
+#        - libreadline6
+#        - libreadline6-dev
+#        - curl
+#        - git-core
+#        - zlib1g
+#        - zlib1g-dev
+#        - libssl-dev
+#        - libyaml-dev
+#        - libxml2-dev
+#        - autoconf
+#        - libc6-dev
+#        - ncurses-dev
+#        - automake
+#        - libtool
 
 #    - name: Install rbenv
 #      git: repo=https://github.com/sstephenson/rbenv.git
@@ -54,7 +54,7 @@
 #      git: repo=https://github.com/sstephenson/ruby-build.git
 #           dest=~/.rbenv/plugins/ruby-build
 
-    - name: install rubies
-      shell: /home/$ansible_user_id/.rbenv/bin/rbenv install {{item}}
-      with_items:
-        - 2.0.0-p195
+#    - name: install rubies
+#      shell: /home/$ansible_user_id/.rbenv/bin/rbenv install {{item}}
+#      with_items:
+#        - 2.0.0-p195

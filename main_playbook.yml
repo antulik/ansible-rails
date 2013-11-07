@@ -1,9 +1,10 @@
 ---
 - hosts: all
 
-  user: root
+  user: vagrant
+  sudo: yes
 
   roles:
     - common
-    - deploy-user
-    - ssh
+#    - deploy-user
+#    - ssh
