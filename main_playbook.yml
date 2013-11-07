@@ -5,7 +5,6 @@
   roles:
     - common
     - ssh
-
   tasks:
     - include: tasks/add_user.yml user=deploy
     - include: tasks/rbenv/setup_prerequisite.yml
@@ -16,3 +15,8 @@
     - include: tasks/rbenv/setup.yml
     - include: tasks/rbenv/install_ruby.yml ruby=2.0.0-p195
 
+- hosts: all
+  user: vagrant
+  sudo: yes
+  roles:
+    - nginx
